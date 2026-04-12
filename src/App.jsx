@@ -5,6 +5,7 @@ import Products from "./components/Products";
 import Steps from "./components/Steps";
 import Pricing from "./components/Pricing";
 import Footer from "./components/Footer";
+import CTA from "./components/CTA";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Products />
       <Steps />
       <Pricing />
+      <CTA />
       <Footer />
     </>
   );
