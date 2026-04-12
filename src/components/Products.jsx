@@ -73,68 +73,12 @@ const productData = [
   },
 ];
 
-// আলাদা করা ProductCard কম্পোনেন্ট
-const ProductCard = ({ product }) => (
-  <div className="border border-gray-100 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition bg-white flex flex-col h-full">
-    <div className="flex justify-between items-start mb-6">
-      <div className="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-full p-2.5">
-        <img
-          src={product.icon}
-          alt={product.title}
-          className="w-full h-full object-contain"
-        />
-      </div>
-      <span
-        className={`text-xs px-3 py-1.5 rounded-full font-medium ${product.badgeColor}`}
-      >
-        {product.badge}
-      </span>
-    </div>
-
-    <h3 className="text-xl font-bold text-gray-800 mb-2">{product.title}</h3>
-
-    <p className="text-gray-500 text-sm leading-relaxed min-h-[60px]">
-      {product.desc}
-    </p>
-
-    <div className="mt-6 mb-6">
-      <span className="text-3xl font-bold text-gray-900">{product.price}</span>
-      <span className="text-sm text-gray-500 font-medium">
-        {product.billing}
-      </span>
-    </div>
-
-    <ul className="space-y-3 mb-8 flex-grow">
-      {product.features.map((feature, idx) => (
-        <li key={idx} className="flex items-center text-sm text-gray-600">
-          <svg
-            className="w-5 h-5 text-green-500 mr-3 flex-shrink-0"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-          {feature}
-        </li>
-      ))}
-    </ul>
-
-    <button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-full font-medium transition mt-auto">
-      Buy Now
-    </button>
-  </div>
-);
-
-// মূল Products কম্পোনেন্ট
 function Products() {
+  // আপনার Cart এর লজিক (useState, function ইত্যাদি) এখানেই থাকবে আগের মতো
+
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-6 py-16">
+      {/* Title & Tabs */}
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-800">
           Premium Digital Tools
@@ -144,20 +88,84 @@ function Products() {
           designed to boost your productivity and creativity.
         </p>
 
-        <div className="flex justify-center gap-4 mt-8">
-          <button className="bg-purple-600 text-white px-8 py-2.5 rounded-full font-medium">
+        {/* 1st picture exact tab design */}
+        <div className="inline-flex items-center bg-white border border-gray-100 p-1.5 rounded-full shadow-sm mt-8">
+          <button className="bg-purple-600 text-white px-8 py-2 rounded-full font-medium text-sm">
             Products
           </button>
-          <button className="border border-gray-200 text-gray-600 px-8 py-2.5 rounded-full font-medium hover:bg-gray-50 transition">
+          <button className="text-gray-600 px-8 py-2 rounded-full font-medium text-sm hover:bg-gray-50 transition">
             Cart (2)
           </button>
         </div>
       </div>
 
-      {/* ProductCard ম্যাপ করা হয়েছে */}
+      {/* PRODUCT GRID */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {productData.map((item, index) => (
-          <ProductCard key={index} product={item} />
+        {productData.map((product, index) => (
+          <div
+            key={index}
+            className="border border-gray-100 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition bg-white flex flex-col h-full"
+          >
+            <div className="flex justify-between items-start mb-6">
+              <div className="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-full p-2.5">
+                <img
+                  src={product.icon}
+                  alt={product.title}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span
+                className={`text-xs px-3 py-1.5 rounded-full font-medium ${product.badgeColor}`}
+              >
+                {product.badge}
+              </span>
+            </div>
+
+            <h3 className="text-xl font-bold text-gray-800 mb-2">
+              {product.title}
+            </h3>
+
+            <p className="text-gray-500 text-sm leading-relaxed min-h-[60px]">
+              {product.desc}
+            </p>
+
+            <div className="mt-6 mb-6">
+              <span className="text-3xl font-bold text-gray-900">
+                {product.price}
+              </span>
+              <span className="text-sm text-gray-500 font-medium">
+                {product.billing}
+              </span>
+            </div>
+
+            <ul className="space-y-3 mb-8 flex-grow">
+              {product.features.map((feature, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-center text-sm text-gray-600"
+                >
+                  <svg
+                    className="w-5 h-5 text-green-500 mr-3 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            <button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-full font-medium transition mt-auto">
+              Buy Now
+            </button>
+          </div>
         ))}
       </div>
     </div>
