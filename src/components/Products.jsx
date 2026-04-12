@@ -6,6 +6,8 @@ import operationIcon from "../../assetsmain/products/operation.png";
 import portfolioIcon from "../../assetsmain/products/portfolio.png";
 import socialIcon from "../../assetsmain/products/social-media.png";
 
+import { toast } from "react-toastify";
+
 function Products() {
   const [cart, setCart] = useState([]);
   const [activeTab, setActiveTab] = useState("products");
@@ -85,10 +87,28 @@ function Products() {
 
   const addToCart = (product) => {
     setCart([...cart, product]);
+    toast.success(`${product.name} added to cart!`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   const removeItem = (id) => {
     setCart(cart.filter((item, index) => index !== id));
+    toast.error(`Item removed from cart`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   const total = cart.reduce((sum, item) => sum + item.price, 0);
