@@ -1,62 +1,142 @@
+import React from "react";
+
 export default function Pricing() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold mb-3">Simple, Transparent Pricing</h2>
+        <h2 className="text-4xl font-bold mb-4 text-gray-900">
+          Simple, Transparent Pricing
+        </h2>
 
-        <p className="text-gray-500 mb-12">
-          Choose the plan that fits your needs.
+        <p className="text-gray-500 mb-16 text-lg">
+          Choose the plan that fits your needs. Upgrade or downgrade anytime.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Starter */}
-          <div className="border rounded-xl p-6 text-left">
-            <h3 className="font-semibold mb-2">Starter</h3>
-            <p className="text-gray-500 text-sm mb-4">Perfect for beginners</p>
+          <div className="border border-gray-200 rounded-2xl p-8 text-left bg-gray-50/50 flex flex-col min-h-[448px]">
+            <h3 className="text-xl font-bold mb-2 text-gray-900">Starter</h3>
+            <p className="text-gray-500 text-sm mb-6">
+              Perfect for getting started
+            </p>
 
-            <h2 className="text-3xl font-bold mb-4">$0</h2>
+            <div className="flex items-end gap-1 mb-8">
+              <h2 className="text-5xl font-bold text-gray-900">$0</h2>
+              <span className="text-gray-500 font-medium pb-1">/Month</span>
+            </div>
 
-            <ul className="text-sm text-gray-600 space-y-2 mb-6">
-              <li>✔ Basic tools</li>
-              <li>✔ Limited access</li>
+            <ul className="text-sm text-gray-600 space-y-3 mb-8 flex-grow">
+              <li className="flex items-center gap-3">
+                <span className="text-green-500 font-bold">✓</span> Access to 10
+                free tools
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-green-500 font-bold">✓</span> Basic
+                templates
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-green-500 font-bold">✓</span> Community
+                support
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-green-500 font-bold">✓</span> 1 project
+                per month
+              </li>
             </ul>
 
-            <button className="w-full bg-purple-600 text-white py-2 rounded-lg">
-              Get Started
+            <button className="w-full bg-[#8B5CF6] hover:bg-[#7C3AED] text-white py-3.5 rounded-xl font-medium transition-colors mt-auto">
+              Get Started Free
             </button>
           </div>
 
           {/* Pro */}
-          <div className="rounded-xl p-6 text-left bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-            <h3 className="font-semibold mb-2">Pro</h3>
-            <p className="text-sm mb-4">Best for professionals</p>
+          <div className="rounded-2xl p-8 text-left bg-[#8B5CF6] text-white flex flex-col min-h-[448px] relative transform md:-translate-y-4 shadow-xl">
+            {/* Badge */}
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-100 text-yellow-800 text-xs font-bold px-4 py-1 rounded-full border border-yellow-200">
+              Most Popular
+            </div>
 
-            <h2 className="text-3xl font-bold mb-4">$29</h2>
+            <h3 className="text-xl font-bold mb-2">Pro</h3>
+            <p className="text-purple-200 text-sm mb-6">
+              Best for professionals
+            </p>
 
-            <ul className="text-sm space-y-2 mb-6">
-              <li>✔ All tools</li>
-              <li>✔ Unlimited usage</li>
+            <div className="flex items-end gap-1 mb-8">
+              <h2 className="text-5xl font-bold">$29</h2>
+              <span className="text-purple-200 font-medium pb-1">/Month</span>
+            </div>
+
+            <ul className="text-sm space-y-3 mb-8 flex-grow text-purple-50">
+              <li className="flex items-center gap-3">
+                <span className="text-white font-bold">✓</span> Access to all
+                premium tools
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-white font-bold">✓</span> Unlimited
+                templates
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-white font-bold">✓</span> Priority support
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-white font-bold">✓</span> Unlimited
+                projects
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-white font-bold">✓</span> Cloud sync
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-white font-bold">✓</span> Advanced
+                analytics
+              </li>
             </ul>
 
-            <button className="w-full bg-white text-purple-600 py-2 rounded-lg">
-              Start Trial
+            <button className="w-full bg-white hover:bg-gray-50 text-[#8B5CF6] py-3.5 rounded-xl font-bold transition-colors mt-auto">
+              Start Pro Trial
             </button>
           </div>
 
           {/* Enterprise */}
-          <div className="border rounded-xl p-6 text-left">
-            <h3 className="font-semibold mb-2">Enterprise</h3>
-            <p className="text-gray-500 text-sm mb-4">For teams</p>
+          <div className="border border-gray-200 rounded-2xl p-8 text-left bg-gray-50/50 flex flex-col min-h-[448px]">
+            <h3 className="text-xl font-bold mb-2 text-gray-900">Enterprise</h3>
+            <p className="text-gray-500 text-sm mb-6">
+              For teams and businesses
+            </p>
 
-            <h2 className="text-3xl font-bold mb-4">$99</h2>
+            <div className="flex items-end gap-1 mb-8">
+              <h2 className="text-5xl font-bold text-gray-900">$99</h2>
+              <span className="text-gray-500 font-medium pb-1">/Month</span>
+            </div>
 
-            <ul className="text-sm text-gray-600 space-y-2 mb-6">
-              <li>✔ Team access</li>
-              <li>✔ Priority support</li>
+            <ul className="text-sm text-gray-600 space-y-3 mb-8 flex-grow">
+              <li className="flex items-center gap-3">
+                <span className="text-green-500 font-bold">✓</span> Everything
+                in Pro
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-green-500 font-bold">✓</span> Team
+                collaboration
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-green-500 font-bold">✓</span> Custom
+                integrations
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-green-500 font-bold">✓</span> Dedicated
+                support
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-green-500 font-bold">✓</span> SLA
+                guarantee
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-green-500 font-bold">✓</span> Custom
+                branding
+              </li>
             </ul>
 
-            <button className="w-full bg-purple-600 text-white py-2 rounded-lg">
-              Contact
+            <button className="w-full bg-[#8B5CF6] hover:bg-[#7C3AED] text-white py-3.5 rounded-xl font-medium transition-colors mt-auto">
+              Contact Sales
             </button>
           </div>
         </div>
