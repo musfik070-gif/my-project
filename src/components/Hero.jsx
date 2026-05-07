@@ -1,5 +1,4 @@
 import React from "react";
-
 import bannerImg from "../../assetsmain/banner.png";
 import playIcon from "../../assetsmain/Play.png";
 
@@ -17,29 +16,32 @@ function Hero() {
           Digital Workflow
         </h1>
 
-        <p className="text-gray-500 mb-6">
+        <p className="text-gray-500 mb-8 text-base leading-relaxed">
           Access premium AI tools, design assets, templates, and productivity
           software—all in one place. Start creating faster today.
         </p>
 
-        <div className="flex gap-4">
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full transition">
+        <div className="flex flex-wrap gap-4">
+          <button className="bg-purple-600 hover:bg-purple-700 text-white px-7 py-3 rounded-full font-medium transition">
             Explore Products
           </button>
-
-          <button className="flex items-center gap-2 border border-purple-500 text-purple-600 px-6 py-3 rounded-full hover:bg-purple-50 transition">
-            <img src={playIcon} alt="" className="w-5 h-5" />
+          <button className="flex items-center gap-2 border border-purple-500 text-purple-600 px-7 py-3 rounded-full hover:bg-purple-50 transition font-medium">
+            <img src={playIcon} alt="" className="w-4 h-4" />
             Watch Demo
           </button>
         </div>
       </div>
 
       <div className="flex justify-center">
-        <img src={bannerImg} alt="hero banner" className="w-full max-w-md padding 200" />
+        {/* Hero banner image */}
+        <img
+          src={bannerImg}
+          alt="hero banner"
+          className="w-full max-w-md rounded-2xl"
+        />
       </div>
     </div>
   );
 }
-<div className="mb-10"></div>;
 
 export default Hero;

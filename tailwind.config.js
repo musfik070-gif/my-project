@@ -4,6 +4,10 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  // ✅ FIX: Added daisyui as required by assignment
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light"], // use light theme so it doesn't override your purple styling
+  },
 }
 

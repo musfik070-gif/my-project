@@ -1,16 +1,30 @@
-# React + Vite
+# DigiTools — Digital Tools Buying Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fully responsive e-commerce website for buying premium digital tools and software. Built with React.js, Tailwind CSS, and DaisyUI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used
 
-## React Compiler
+- **React.js** — Component-based UI
+- **Tailwind CSS** — Utility-first styling
+- **DaisyUI** — Tailwind component library
+- **React-Toastify** — Toast notifications
+- **Vite** — Build tool
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 3 Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Live Cart System** — Add products to cart from any card, see the count update instantly in the navbar badge, and remove individual items or clear all with one click.
+
+2. **Product / Cart Toggle** — A clean toggle button lets you switch between browsing products and viewing your cart without leaving the page.
+
+3. **Toast Notifications** — Every action (add to cart, remove item, checkout) triggers a smooth React-Toastify notification so users always know what's happening.
+
+---
+
+## 📤 Links
+
+- **GitHub Repository:** _your repo link here_
+- **Live Site:** _your live site link here_
