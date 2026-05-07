@@ -1,3 +1,5 @@
+import daisyui from "daisyui";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -5,9 +7,8 @@ export default {
     extend: {},
   },
   // ✅ FIX: Added daisyui as required by assignment
-  plugins: [require("daisyui")],
+  plugins: [daisyui],
   daisyui: {
     themes: ["light"], // use light theme so it doesn't override your purple styling
   },
 }
-

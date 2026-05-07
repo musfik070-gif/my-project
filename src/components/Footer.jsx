@@ -1,11 +1,11 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className="bg-gray-900 text-white py-12 sm:py-16">
       {/* 5-column grid to match screenshot */}
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
 
         {/* Brand column — wider */}
-        <div className="col-span-2 md:col-span-1">
+        <div className="sm:col-span-2 lg:col-span-1">
           <h2 className="text-xl font-bold mb-3">DigiTools</h2>
           <p className="text-gray-400 text-sm leading-relaxed">
             Premium digital tools for creators, professionals, and businesses.
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         {/* Social Links — matches screenshot */}
-        <div>
+        <div className="sm:col-span-2 lg:col-span-1">
           <h3 className="font-semibold mb-4">Social Links</h3>
           <div className="flex gap-3">
             {/* Instagram */}
@@ -73,9 +73,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar with Privacy/Terms links — matches screenshot */}
-      <div className="max-w-6xl mx-auto px-6 mt-12 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 sm:mt-12 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
         <p className="text-gray-500 text-sm">© 2026 DigiTools. All rights reserved.</p>
-        <div className="flex gap-6 text-sm text-gray-500">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
           <a href="#" className="hover:text-white transition">Privacy Policy</a>
           <a href="#" className="hover:text-white transition">Terms of Service</a>
           <a href="#" className="hover:text-white transition">Cookies</a>

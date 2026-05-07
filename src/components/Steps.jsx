@@ -5,15 +5,17 @@ import rocketImg from "../../assetsmain/rocket.png";
 
 export default function Steps() {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold mb-3">Get Started In 3 Steps</h2>
-        <p className="text-gray-500 mb-12">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
+          Get Started In 3 Steps
+        </h2>
+        <p className="text-gray-500 mb-10 sm:mb-12 text-sm sm:text-base">
           Start using premium digital tools in minutes, not hours.
         </p>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {/* Step 1 */}
-          <div className="bg-white rounded-xl p-8 shadow-sm relative flex flex-col items-center">
+          <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm relative flex flex-col items-center">
             <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs px-3 py-1 rounded-full">
               01
             </div>
@@ -33,7 +35,7 @@ export default function Steps() {
             </p>
           </div>
           {/* Step 2 */}
-          <div className="bg-white rounded-xl p-8 shadow-sm relative flex flex-col items-center">
+          <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm relative flex flex-col items-center">
             <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs px-3 py-1 rounded-full">
               02
             </div>
@@ -52,7 +54,7 @@ export default function Steps() {
             </p>
           </div>
           {/* Step 3 */}
-          <div className="bg-white rounded-xl p-8 shadow-sm relative flex flex-col items-center">
+          <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm relative flex flex-col items-center sm:col-span-2 lg:col-span-1">
             <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs px-3 py-1 rounded-full">
               03
             </div>

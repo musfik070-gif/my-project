@@ -11,6 +11,7 @@ A modern, fully responsive e-commerce website for buying premium digital tools a
 - **DaisyUI** — Tailwind component library
 - **React-Toastify** — Toast notifications
 - **Vite** — Build tool
+- **JavaScript (ES6+)**
 
 ---
 

@@ -83,20 +83,22 @@ function Products({ cart, setCart }) {
   const total = cart.reduce((sum, item) => sum + item.price, 0);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-6 py-16">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
 
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-800">Premium Digital Tools</h2>
-        <p className="text-gray-500 mt-2 max-w-xl mx-auto">
+      <div className="text-center mb-10 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">
+          Premium Digital Tools
+        </h2>
+        <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
           Choose from our curated collection of premium digital products designed
           to boost your productivity and creativity.
         </p>
 
         {/* Toggle Buttons */}
-        <div className="inline-flex items-center bg-white border border-gray-100 p-1.5 rounded-full shadow-sm mt-8">
+        <div className="inline-flex w-full max-w-xs sm:w-auto items-center bg-white border border-gray-100 p-1.5 rounded-full shadow-sm mt-8">
           <button
             onClick={() => setActiveTab("products")}
-            className={`px-8 py-2 rounded-full font-medium text-sm transition ${
+            className={`flex-1 sm:flex-none px-5 sm:px-8 py-2 rounded-full font-medium text-sm transition ${
               activeTab === "products"
                 ? "bg-purple-600 text-white"
                 : "text-gray-600 hover:bg-gray-50"
@@ -106,7 +108,7 @@ function Products({ cart, setCart }) {
           </button>
           <button
             onClick={() => setActiveTab("cart")}
-            className={`px-8 py-2 rounded-full font-medium text-sm transition ${
+            className={`flex-1 sm:flex-none px-5 sm:px-8 py-2 rounded-full font-medium text-sm transition ${
               activeTab === "cart"
                 ? "bg-purple-600 text-white"
                 : "text-gray-600 hover:bg-gray-50"
@@ -119,13 +121,13 @@ function Products({ cart, setCart }) {
 
       {/* ==================== PRODUCTS TAB ==================== */}
       {activeTab === "products" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-8">
           {productsData.map((product) => (
             <div
               key={product.id}
-              className="border border-gray-100 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition bg-white flex flex-col h-full"
+              className="border border-gray-100 rounded-2xl p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-md transition bg-white flex flex-col h-full"
             >
-              <div className="flex justify-between items-start mb-6">
+              <div className="flex justify-between items-start gap-3 mb-6">
                 <div className="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-full p-2.5">
                   <img
                     src={iconMap[product.icon]}
@@ -135,7 +137,7 @@ function Products({ cart, setCart }) {
                 </div>
                 {/* ✅ FIX: uses tagType for color lookup */}
                 <span
-                  className={`text-xs px-3 py-1.5 rounded-full font-medium ${
+                  className={`text-xs px-3 py-1.5 rounded-full font-medium text-center ${
                     tagColorMap[product.tagType] || "bg-gray-100 text-gray-600"
                   }`}
                 >
@@ -146,12 +148,12 @@ function Products({ cart, setCart }) {
               <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
 
               {/* ✅ FIX: product.description (was product.desc) */}
-              <p className="text-gray-500 text-sm leading-relaxed min-h-[60px]">
+              <p className="text-gray-500 text-sm leading-relaxed sm:min-h-[60px]">
                 {product.description}
               </p>
 
-              <div className="mt-6 mb-6">
-                <span className="text-3xl font-bold text-gray-900">${product.price}</span>
+              <div className="mt-5 sm:mt-6 mb-5 sm:mb-6">
+                <span className="text-3xl sm:text-4xl font-bold text-gray-900">${product.price}</span>
                 {/* ✅ FIX: product.period (was product.billing) */}
                 <span className="text-sm text-gray-500 font-medium">
                   {periodLabel[product.period] || `/${product.period}`}
@@ -199,8 +201,8 @@ function Products({ cart, setCart }) {
       {activeTab === "cart" && (
         <div className="max-w-2xl mx-auto mt-8">
           {cart.length === 0 ? (
-            <div className="text-center py-16 bg-gray-50 rounded-2xl border border-gray-100">
-              <p className="text-gray-500 text-lg">No items in your cart</p>
+            <div className="text-center py-12 sm:py-16 px-4 bg-gray-50 rounded-2xl border border-gray-100">
+              <p className="text-gray-500 text-base sm:text-lg">No items in your cart</p>
               <button
                 onClick={() => setActiveTab("products")}
                 className="mt-4 text-purple-600 font-medium hover:underline"
@@ -209,7 +211,7 @@ function Products({ cart, setCart }) {
               </button>
             </div>
           ) : (
-            <div className="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 shadow-sm">
+            <div className="bg-white border border-gray-100 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm">
               {/* "Your Cart" heading — matches screenshot */}
               <h3 className="text-lg font-bold text-gray-800 mb-4">Your Cart</h3>
 
@@ -217,9 +219,9 @@ function Products({ cart, setCart }) {
                 {cart.map((item, index) => (
                   <div
                     key={index}
-                    className="flex justify-between items-center bg-gray-50 rounded-xl px-4 py-3"
+                    className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 bg-gray-50 rounded-xl px-4 py-3"
                   >
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4 min-w-0">
                       <div className="w-10 h-10 bg-white rounded-full p-2 flex-shrink-0 shadow-sm">
                         <img
                           src={iconMap[item.icon]}
@@ -227,8 +229,8 @@ function Products({ cart, setCart }) {
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-800 text-sm">{item.name}</h4>
+                      <div className="min-w-0">
+                        <h4 className="font-semibold text-gray-800 text-sm truncate">{item.name}</h4>
                         <p className="text-gray-500 text-sm">
                           ${item.price}{periodLabel[item.period] || `/${item.period}`}
                         </p>
@@ -236,7 +238,7 @@ function Products({ cart, setCart }) {
                     </div>
                     <button
                       onClick={() => removeItem(index)}
-                      className="text-red-500 hover:text-red-600 text-sm font-medium transition"
+                      className="self-start sm:self-center text-red-500 hover:text-red-600 text-sm font-medium transition"
                     >
                       Remove
                     </button>
@@ -260,7 +262,7 @@ function Products({ cart, setCart }) {
           )}
         </div>
       )}
-    </div>
+    </section>
   );
 }
 
