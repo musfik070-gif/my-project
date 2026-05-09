@@ -1,17 +1,8 @@
-// ✅ FIX: Import products from the new JSON data file (no longer hardcoded here)
-// ✅ FIX: Accept cart and setCart as PROPS from App.jsx (state was lifted up)
-// ✅ FIX: Checkout now uses toast.success() instead of alert()
-// ✅ FIX: Product field names updated to match JSON spec (description, period, tagType)
-// ✅ OPTIONAL: "Added to cart" text feedback on the Buy Now button
-// ✅ OPTIONAL: Cart count in Navbar updates on every add/remove/checkout (via lifted state)
-
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-// ✅ FIX: Load product data from the JSON file
 import productsData from "../data/products.json";
 
-// ✅ Map icon string names from JSON to actual imported images
 import writingIcon   from "../../assetsmain/products/writing_2327400 1.png";
 import designIcon    from "../../assetsmain/products/design-tool.png";
 import cameraIcon    from "../../assetsmain/products/camera.png";
@@ -30,14 +21,12 @@ const iconMap = {
   shopping:  shoppingIcon,
 };
 
-// ✅ FIX: tagType string → Tailwind color classes
 const tagColorMap = {
   "best seller": "bg-orange-50 text-orange-600",
   "popular":     "bg-purple-50 text-purple-600",
   "new":         "bg-green-50 text-green-600",
 };
 
-// ✅ Billing label based on period field from JSON
 const periodLabel = {
   "monthly":  "/Mo",
   "yearly":   "/Yr",
@@ -51,7 +40,6 @@ function Products({ cart, setCart }) {
   const addToCart = (product) => {
     setCart([...cart, product]);
 
-    // ✅ OPTIONAL: Flash "Added to cart" on the button for 1.5 seconds
     setAddedIds((prev) => [...prev, product.id]);
     setTimeout(() => {
       setAddedIds((prev) => prev.filter((id) => id !== product.id));
@@ -71,7 +59,6 @@ function Products({ cart, setCart }) {
     });
   };
 
-  // ✅ FIX: Checkout now uses toast instead of alert()
   const handleCheckout = () => {
     setCart([]);
     toast.success("Order placed! Your cart has been cleared.", {
@@ -94,7 +81,6 @@ function Products({ cart, setCart }) {
           to boost your productivity and creativity.
         </p>
 
-        {/* Toggle Buttons */}
         <div className="inline-flex w-full max-w-xs sm:w-auto items-center bg-white border border-gray-100 p-1.5 rounded-full shadow-sm mt-8">
           <button
             onClick={() => setActiveTab("products")}
@@ -119,7 +105,6 @@ function Products({ cart, setCart }) {
         </div>
       </div>
 
-      {/* ==================== PRODUCTS TAB ==================== */}
       {activeTab === "products" && (
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-8">
           {productsData.map((product) => (
@@ -135,7 +120,6 @@ function Products({ cart, setCart }) {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                {/* ✅ FIX: uses tagType for color lookup */}
                 <span
                   className={`text-xs px-3 py-1.5 rounded-full font-medium text-center ${
                     tagColorMap[product.tagType] || "bg-gray-100 text-gray-600"
@@ -147,14 +131,12 @@ function Products({ cart, setCart }) {
 
               <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
 
-              {/* ✅ FIX: product.description (was product.desc) */}
               <p className="text-gray-500 text-sm leading-relaxed sm:min-h-[60px]">
                 {product.description}
               </p>
 
               <div className="mt-5 sm:mt-6 mb-5 sm:mb-6">
                 <span className="text-3xl sm:text-4xl font-bold text-gray-900">${product.price}</span>
-                {/* ✅ FIX: product.period (was product.billing) */}
                 <span className="text-sm text-gray-500 font-medium">
                   {periodLabel[product.period] || `/${product.period}`}
                 </span>
@@ -181,7 +163,6 @@ function Products({ cart, setCart }) {
                 ))}
               </ul>
 
-              {/* ✅ OPTIONAL: Button text changes to "Added to Cart ✓" briefly */}
               <button
                 onClick={() => addToCart(product)}
                 className={`w-full py-3 rounded-full font-medium transition mt-auto ${
@@ -197,7 +178,6 @@ function Products({ cart, setCart }) {
         </div>
       )}
 
-      {/* ==================== CART TAB ==================== */}
       {activeTab === "cart" && (
         <div className="max-w-2xl mx-auto mt-8">
           {cart.length === 0 ? (
@@ -212,7 +192,6 @@ function Products({ cart, setCart }) {
             </div>
           ) : (
             <div className="bg-white border border-gray-100 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm">
-              {/* "Your Cart" heading — matches screenshot */}
               <h3 className="text-lg font-bold text-gray-800 mb-4">Your Cart</h3>
 
               <div className="space-y-3">

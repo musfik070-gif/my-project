@@ -14,7 +14,6 @@ export default function Steps() {
           Start using premium digital tools in minutes, not hours.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-          {/* Step 1 */}
           <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm relative flex flex-col items-center">
             <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs px-3 py-1 rounded-full">
               01
@@ -34,7 +33,6 @@ export default function Steps() {
               started.
             </p>
           </div>
-          {/* Step 2 */}
           <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm relative flex flex-col items-center">
             <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs px-3 py-1 rounded-full">
               02
@@ -53,7 +51,6 @@ export default function Steps() {
               Browse our catalog and select the tools that fit your needs.
             </p>
           </div>
-          {/* Step 3 */}
           <div className="bg-white rounded-xl p-6 sm:p-8 shadow-sm relative flex flex-col items-center sm:col-span-2 lg:col-span-1">
             <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs px-3 py-1 rounded-full">
               03

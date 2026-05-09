@@ -22,10 +22,3 @@ A modern, fully responsive e-commerce website for buying premium digital tools a
 2. **Product / Cart Toggle** — A clean toggle button lets you switch between browsing products and viewing your cart without leaving the page.
 
 3. **Toast Notifications** — Every action (add to cart, remove item, checkout) triggers a smooth React-Toastify notification so users always know what's happening.
-
----
-
-## 📤 Links
-
-- **GitHub Repository:** _your repo link here_
-- **Live Site:** _your live site link here_

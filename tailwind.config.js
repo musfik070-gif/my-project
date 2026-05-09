@@ -6,9 +6,9 @@ export default {
   theme: {
     extend: {},
   },
-  // ✅ FIX: Added daisyui as required by assignment
   plugins: [daisyui],
   daisyui: {
-    themes: ["light"], // use light theme so it doesn't override your purple styling
+    // Keep DaisyUI from overriding the custom purple theme.
+    themes: ["light"],
   },
 }

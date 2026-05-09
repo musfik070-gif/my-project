@@ -13,7 +13,6 @@ export default function Pricing() {
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {/* Starter */}
           <div className="border border-gray-200 rounded-2xl p-6 sm:p-8 text-left bg-gray-50/50 flex flex-col min-h-[420px] lg:min-h-[448px]">
             <h3 className="text-xl font-bold mb-2 text-gray-900">Starter</h3>
             <p className="text-gray-500 text-sm mb-6">
@@ -49,9 +48,7 @@ export default function Pricing() {
             </button>
           </div>
 
-          {/* Pro */}
           <div className="rounded-2xl p-6 sm:p-8 text-left bg-[#8B5CF6] text-white flex flex-col min-h-[420px] lg:min-h-[448px] relative lg:-translate-y-4 shadow-xl">
-            {/* Badge */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-100 text-yellow-800 text-xs font-bold px-4 py-1 rounded-full border border-yellow-200">
               Most Popular
             </div>
@@ -96,7 +93,6 @@ export default function Pricing() {
             </button>
           </div>
 
-          {/* Enterprise */}
           <div className="border border-gray-200 rounded-2xl p-6 sm:p-8 text-left bg-gray-50/50 flex flex-col min-h-[420px] lg:min-h-[448px] sm:col-span-2 lg:col-span-1">
             <h3 className="text-xl font-bold mb-2 text-gray-900">Enterprise</h3>
             <p className="text-gray-500 text-sm mb-6">
